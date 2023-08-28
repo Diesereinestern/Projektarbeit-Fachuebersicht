@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"); /*Importieren der Font "Space Mono*/
+
+/*Im root Verzeichnis werden einige Variabeln definiert, die später noch ihren Nutzen finden*/
+:root {
+  --color-primary: #0b192e;
+  --color-secondary: #182b45;
+  --color-tertiary: #0b3341;
+  --color-accent: #0cc9ab;
+  --color-black: #202121;
+  --color-dark: #0f1a2c;
+
+  --color-light: #20395f;
+  --color-white: #fff;
+  --color-heading: #cdd7f5;
+  --color-subheading: #707a94;
+  --color-subheading1-underline: #eb5857; /*Coding Hilfe*/
+  --color-subheading2-underline: #177edc; /*Coden lernen*/
+  --color-subheading3-underline: #b68b09; /*Coding Influencer*/
+  --color-body: #959bb0;
+  --color-error: #eb5857;
+  --color-success: #0c9;
+  --color-warning: #b68b09;
+  --color-info: #177edc;
+  --color-transparent-header: rgba(16, 27, 46, 0.91);
+  --color-transparent-selection: rgba(0, 204, 153, 0.5);
+}
+
+/*Folgender Code verändert die Farbe für mit dem Cursor markierten Text und Bilder*/
+::selection {
+  background: var(--color-success);
+  color: var(--color-primary);
+}
+img::selection {
+  background: var(--color-transparent-selection);
+}
+
+
+/*Im folgenden Abschnitt finden sich nur einige Definitionen und Regulationen um spätere Fehler zu beheben und vorzubeugen.*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin:0;
+  padding:0;
+  border:0;
+  font:inherit;
+  vertical-align:baseline;
+}
+body {
+  background-color: var(--color-primary);
+  background-image: url("../src/svg/yeet.svg");
+  background-size: cover;
+  overflow: hidden; 
+}
+
+/*
+Im folgenden Abschnitt sind CSS Regeln für die Überschrfiten und Unterüberschriften definiert.
+*/
+
+h1 {
+  color: white;
+}
+#header {
+  border: var(--color-dark) 5px solid;
+  background-color: var(--color-transparent-header);
+}
+#header-text {
+  font-size: 32pt;
+  font-family: "Space Mono", monospace;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 5px;
+}
+.subheading {
+  font-family: "Space Mono", monospace;
+  font-size: 20pt;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+#subheading-1 {
+  text-decoration-color: var(--color-subheading2-underline);
+  margin-top: 0.25cm;
+}
+#subheading-2 {
+  text-decoration-color: var(--color-subheading1-underline);
+  margin-top: 0.75cm;
+}
+#subheading-3 {
+  text-decoration-color: var(--color-subheading3-underline);
+  margin-top: 0.75cm;
+}
+
+
+/*
+Im folgenden Abschnitt ist jegliche Logik für die CSS Container und den Content definiert.
+*/
+
+
+/*Der Container oder auch "Wrapper", welcher jeglichen Content beinhaltet.*/
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/*Der "Wrapper" bzw. "Wrappingcontainer" für die einzelnen Elemente und Subheadings*/
+.links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/*Eine Klasse für die Container in der Mitte für einen gleichmäßigen Abstand.*/
+.link-container-middle {
+  margin-left: 0.5cm; 
+  margin-right: 0.5cm;
+}
+
+
+/*
+Die unten stehenden Klassen "link-container" und "link-container-influencer" sind beinahe identisch, 
+jedoch haben die Influencer Container andere Einstellungen für die maximale Höhe und Breite. Die
+Änderungen während mit IDs nicht möglich gewesen, weswegen ich mich dazu entschied eine zweite Klasse 
+für die Influencer zu erstellen. Für die jeweiligen Klassen gibt es demnach auch identische Image und Hover Einstellungen.
+*/
+.link-container {
+  margin: 0 10px;
+  padding: 10px;
+  border: 3.5px solid var(--color-white);
+  border-radius: 5px;
+  background-color: #fff;
+}
+.link-container:hover {
+  /*
+  Folgender Code erzeugt einen Box Shadow um den Item Container herum, sofern über ihn gehovert wird. 
+  Das gibt dem Ganzen ein Gefühl, dass unterstreicht, welcher Container ausgewählt ist.
+  */
+  border-color: var(--color-success);
+  -webkit-box-shadow: 0 0 20px var(--color-success); /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 0 0 20px var(--color-success); /* Firefox 3.5 - 3.6 */
+  box-shadow: 0 0 20px var(--color-success); /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+.link-container img {
+  /*Hier wird für eine einheitliche Containerhöhe ein Limit gesetzt, das beschränkt wie groß ein Container maximal werden darf*/
+  max-height: 120px;
+}
+
+.link-container-influencer {
+  padding: 2.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  border: 2.5px solid var(--color-white);
+  border-radius: 5px;
+  background-color: #fff;
+}
+.link-container-influencer:hover {
+  border-color: var(--color-success);
+  -webkit-box-shadow: 0 0 20px var(--color-success); /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 0 0 20px var(--color-success); /* Firefox 3.5 - 3.6 */
+  box-shadow: 0 0 20px var(--color-success); /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+.link-container-influencer img {
+  max-height: 220px;
+  margin: auto;
+}
+
+
+/*Einzelne Anpassungen um ein Paar Ausreißer zu regulieren*/
+#w3-logo {
+  width: 140px;
+  height: 120px;
+}
+#mdn-logo {
+  width: 360px;
+  height: 120px;
+}
+#morpheus-logo {
+  width: auto;
+}
+#fireship-logo {
+  height: 250px;
+  width: auto;
+}
+#chromik-logo {
+  height: 250px;
+  width: auto;
+}

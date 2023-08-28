@@ -1,0 +1,150 @@
+.filterwrapper {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.glitched-text-Informatik {
+  filter: url(#informatik);
+  fill: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.top-r,
+.bot-r,
+.top-g,
+.bot-g {
+  stroke: white;
+}
+.top-r {
+  stroke-width: 100px;
+  animation: topani 3.5s linear infinite;
+}
+.bot-r {
+  stroke-width: 100px;
+  animation: botani 4s linear infinite;
+}
+.top-g {
+  stroke-width: 50px;
+  animation: topani 4s linear reverse infinite;
+}
+.bot-g {
+  stroke-width: 50%;
+  animation: botani 3.5s linear reverse infinite;
+}
+
+@keyframes topani {
+  3% {
+    stroke-width: 60px;
+  }
+  8% {
+    stroke-width: 99px;
+  }
+  17% {
+    stroke-width: 183px;
+  }
+  19% {
+    stroke-width: 115px;
+  }
+  26% {
+    stroke-width: 41px;
+  }
+  31% {
+    stroke-width: 41px;
+  }
+  39% {
+    stroke-width: 198px;
+  }
+  44% {
+    stroke-width: 36px;
+  }
+  51% {
+    stroke-width: 15px;
+  }
+  54% {
+    stroke-width: 149px;
+  }
+  63% {
+    stroke-width: 164px;
+  }
+  67% {
+    stroke-width: 2px;
+  }
+  77% {
+    stroke-width: 138px;
+  }
+  81% {
+    stroke-width: 42px;
+  }
+  85% {
+    stroke-width: 20px;
+  }
+  90% {
+    stroke-width: 54px;
+  }
+  99% {
+    stroke-width: 66px;
+  }
+}
+@keyframes botani {
+  1% {
+    stroke-width: 7px;
+  }
+  9% {
+    stroke-width: 117px;
+  }
+  12% {
+    stroke-width: 194px;
+  }
+  18% {
+    stroke-width: 86px;
+  }
+  23% {
+    stroke-width: 12px;
+  }
+  27% {
+    stroke-width: 180px;
+  }
+  30% {
+    stroke-width: 59px;
+  }
+  35% {
+    stroke-width: 141px;
+  }
+  41% {
+    stroke-width: 11px;
+  }
+  47% {
+    stroke-width: 110px;
+  }
+  53% {
+    stroke-width: 60px;
+  }
+  56% {
+    stroke-width: 71px;
+  }
+  60% {
+    stroke-width: 84px;
+  }
+  68% {
+    stroke-width: 87px;
+  }
+  73% {
+    stroke-width: 166px;
+  }
+  77% {
+    stroke-width: 118px;
+  }
+  82% {
+    stroke-width: 103px;
+  }
+  87% {
+    stroke-width: 164px;
+  }
+  91% {
+    stroke-width: 119px;
+  }
+}

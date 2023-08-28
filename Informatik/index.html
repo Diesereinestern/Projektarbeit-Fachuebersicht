@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Informatik</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./src/img/favicon.png" />     <!--Definiert ein custom Favicon-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <!--Relevant für 2 im Code verwendete Klassen-->
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/glitch.css" />
+    <script src="./js/swapsite.js"></script>
+  </head>
+  <body>
+    <div class="w3-container" id="header">
+      <h1 class="w3-center glitched-text-heading" id="header-text">
+        <strong>Informatik</strong>
+      </h1>
+    </div>
+
+    <div class="main-container">
+      <div
+        class="banner-visible-area style-scope ytd-c4-tabbed-header-renderer"
+      >
+        <div
+          id="banner-editor"
+          class="style-scope ytd-c4-tabbed-header-renderer"
+        ></div>
+      </div>
+
+      <!--Erster Contentabschnitt-->
+      <h1 id="subheading-1" class="subheading glitched-text-subheading">
+        Coden lernen
+      </h1>
+      <div class="links-container">
+        <div
+          onclick="link('https://www.w3schools.com/')"
+          class="link-container"
+        >
+          <img id="w3-logo" src="./src/logos/w3.jpg" alt="W3Schools" />
+        </div>
+        <div
+          onclick="link('https://developer.mozilla.org/en-US/')"
+          class="link-container link-container-middle"
+        >
+          <img id="mdn-logo" src="./src/logos/mdn.png" alt="Stack Overflow" />
+        </div>
+        <div onclick="link('https://Fireship.io/')" class="link-container">
+          <img src="./src/logos/fireshipio.png" alt="Fireship" />
+        </div>
+      </div>
+
+      <!--Zweiter Contentabschnitt-->
+      <h1 id="subheading-2" class="subheading glitched-text-subheading">
+        Coding Hilfe
+      </h1>
+      <div class="links-container">
+        <div onclick="link('https://github.com/')" class="link-container">
+          <img src="./src/logos/Github.png" alt="GitHub" />
+        </div>
+        <div
+          onclick="link('https://stackoverflow.com/')"
+          class="link-container link-container-middle"
+        >
+          <img src="./src/logos/stackoverflow.png" alt="Stack Overflow" />
+        </div>
+        <div onclick="link('https://codepen.io/')" class="link-container">
+          <img src="./src/logos/Codepen.jpg" alt="Codepen" />
+        </div>
+      </div>
+
+      <!--Dritter Contentabschnitt-->
+      <h1 id="subheading-3" class="subheading glitched-text-subheading">
+        Coding Influencer
+      </h1>
+      <div class="links-container">
+        <div
+          onclick="link('https://www.youtube.com/@KevinChromik')"
+          class="link-container-influencer"
+        >
+          <img
+            id="chromik-logo"
+            src="./src/logos/chromik.jpg"
+            alt="Kevin Chromik"
+          />
+        </div>
+        <div
+          onclick="link('https://www.youtube.com/@Fireship')"
+          class="link-container-influencer link-container-middle"
+        >
+          <img
+            id="fireship-logo"
+            src="./src/logos/fireship.jpg"
+            alt="Fireship"
+          />
+        </div>
+        <div
+          onclick="link('https://www.youtube.com/@TheMorpheusTutorials')"
+          class="link-container-influencer"
+        >
+          <img
+            id="morpheus-logo"
+            src="./src/logos/morpheus.jpg"
+            alt="TheMorpheus"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!--Folgendes sind die Beiden Glitch Filter, mehr dazu finden Sie in der Datei "glitch.css"-->
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="100%"
+      height="100%"
+      class="filterwrapper"
+    >
+      <defs>
+        <svg
+          id="glitchmask-r"
+          width="100%"
+          height="100%"
+          viewbox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <line class="top-r" x1="0" y1="0" x2="100%" y2="0"></line>
+          <line class="bot-r" x1="0" y1="100%" x2="100%" y2="100%"></line>
+        </svg>
+        <svg
+          id="glitchmask-g"
+          width="100%"
+          height="100%"
+          viewbox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <line class="top-g" x1="0" y1="0" x2="100%" y2="0"></line>
+          <line class="bot-g" x1="0" y1="100%" x2="100%" y2="100%"></line>
+        </svg>
+
+        <filter
+          color-interpolation-filters="sRGB"
+          id="filter"
+          width="100%"
+          heigth="100%"
+          x="0"
+          y="0"
+        >
+          <feFlood flood-color="rgba(16, 27, 46, 0.1)" result="black" />
+
+          <!-- red text start -->
+          <feFlood flood-color="red" result="REDTXT_FLOOD_10" />
+          <feComposite
+            operator="in"
+            in="REDTXT_FLOOD_10"
+            in2="SourceAlpha"
+            result="REDTXT_COMP_20"
+          />
+          <feOffset
+            in="SourceGraphic"
+            dx="-2"
+            dy="0"
+            result="REDTXT_OFFSET_30"
+          />
+          <feMerge result="REDTXT_MERGE_40">
+            <feMergeNode in="black" />
+            <feMergeNode in="REDTXT_COMP_20" />
+            <feMergeNode in="REDTXT_OFFSET_30" />
+          </feMerge>
+          <feImage
+            preserveAspectRatio="none"
+            id="mask-r"
+            result="REDTXT_IMG_50"
+            xlink:href="#glitchmask-r"
+          />
+          <feComposite
+            in2="REDTXT_IMG_50"
+            in="REDTXT_MERGE_40"
+            operator="out"
+            result="REDTXT_COMP_60"
+          />
+          <!-- red text end -->
+
+          <!-- green text start -->
+          <feFlood flood-color="limegreen" result="GREENTXT_FLOOD_10" />
+          <feComposite
+            operator="in"
+            in="GREENTXT_FLOOD_10"
+            in2="SourceAlpha"
+            result="GREENTXT_COMP_20"
+          />
+          <feOffset
+            in="SourceGraphic"
+            dx="2"
+            dy="0"
+            result="GREENTXT_OFFSET_30"
+          />
+          <feMerge result="GREENTXT_MERGE_40">
+            <feMergeNode in="black" />
+            <feMergeNode in="GREENTXT_COMP_20" />
+            <feMergeNode in="GREENTXT_OFFSET_30" />
+          </feMerge>
+          <feImage
+            preserveAspectRatio="none"
+            id="mask-g"
+            result="GREENTXT_IMG_50"
+            xlink:href="#glitchmask-g"
+          />
+          <feComposite
+            in2="GREENTXT_IMG_50"
+            in="GREENTXT_MERGE_40"
+            operator="out"
+            result="GREENTXT_COMP_60"
+          />
+          <!-- green text end -->
+
+          <feMerge result="MERGE_10">
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="REDTXT_COMP_60" />
+            <feMergeNode in="GREENTXT_COMP_60" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="100%"
+      height="100%"
+      class="filterwrapper"
+    >
+      <defs>
+        <svg
+          id="glitchmask-r"
+          width="100%"
+          height="100%"
+          viewbox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <line class="top-r" x1="0" y1="0" x2="100%" y2="0"></line>
+          <line class="bot-r" x1="0" y1="100%" x2="100%" y2="100%"></line>
+        </svg>
+        <svg
+          id="glitchmask-g"
+          width="100%"
+          height="100%"
+          viewbox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <line class="top-g" x1="0" y1="0" x2="100%" y2="0"></line>
+          <line class="bot-g" x1="0" y1="100%" x2="100%" y2="100%"></line>
+        </svg>
+
+        <filter
+          color-interpolation-filters="sRGB"
+          id="filter2"
+          width="100%"
+          heigth="100%"
+          x="0"
+          y="0"
+        >
+          <feFlood flood-color="rgba(11, 25, 46, 0.1)" result="black" />
+
+          <!-- red text start -->
+          <feFlood flood-color="red" result="REDTXT_FLOOD_10" />
+          <feComposite
+            operator="in"
+            in="REDTXT_FLOOD_10"
+            in2="SourceAlpha"
+            result="REDTXT_COMP_20"
+          />
+          <feOffset
+            in="SourceGraphic"
+            dx="-2"
+            dy="0"
+            result="REDTXT_OFFSET_30"
+          />
+          <feMerge result="REDTXT_MERGE_40">
+            <feMergeNode in="black" />
+            <feMergeNode in="REDTXT_COMP_20" />
+            <feMergeNode in="REDTXT_OFFSET_30" />
+          </feMerge>
+          <feImage
+            preserveAspectRatio="none"
+            id="mask-r"
+            result="REDTXT_IMG_50"
+            xlink:href="#glitchmask-r"
+          />
+          <feComposite
+            in2="REDTXT_IMG_50"
+            in="REDTXT_MERGE_40"
+            operator="out"
+            result="REDTXT_COMP_60"
+          />
+          <!-- red text end -->
+
+          <!-- green text start -->
+          <feFlood flood-color="limegreen" result="GREENTXT_FLOOD_10" />
+          <feComposite
+            operator="in"
+            in="GREENTXT_FLOOD_10"
+            in2="SourceAlpha"
+            result="GREENTXT_COMP_20"
+          />
+          <feOffset
+            in="SourceGraphic"
+            dx="2"
+            dy="0"
+            result="GREENTXT_OFFSET_30"
+          />
+          <feMerge result="GREENTXT_MERGE_40">
+            <feMergeNode in="black" />
+            <feMergeNode in="GREENTXT_COMP_20" />
+            <feMergeNode in="GREENTXT_OFFSET_30" />
+          </feMerge>
+          <feImage
+            preserveAspectRatio="none"
+            id="mask-g"
+            result="GREENTXT_IMG_50"
+            xlink:href="#glitchmask-g"
+          />
+          <feComposite
+            in2="GREENTXT_IMG_50"
+            in="GREENTXT_MERGE_40"
+            operator="out"
+            result="GREENTXT_COMP_60"
+          />
+          <!-- green text end -->
+
+          <feMerge result="MERGE_10">
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="REDTXT_COMP_60" />
+            <feMergeNode in="GREENTXT_COMP_60" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>

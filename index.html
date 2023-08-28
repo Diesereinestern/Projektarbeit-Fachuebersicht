@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Faecher-Hub</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/glitch.css" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
+    <script src="./Informatik/js/swapsite.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="deutsch" onclick="link('deutsch.html')">Deutsch</div>
+      <div class="englisch" onclick="link('englisch.html')">Englisch</div>
+      <div class="mathe" onclick="link('mathe.html')">Mathe</div>
+      <div class="franzoesisch" onclick="link('franzoesisch.html')">
+        Französisch
+      </div>
+      <div class="latein" onclick="link('latein.html')">Latein</div>
+      <div class="geschichte" onclick="link('geschichte.html')">Geschichte</div>
+      <div class="chemie" onclick="link('chemie.html')">Chemie</div>
+      <div class="physik" onclick="link('physik.html')">Physik</div>
+      <div class="informatik" onclick="link('./Informatik/index.html')">
+        <span class="glitched-text-Informatik">Informatik</span>
+      </div>
+      <div class="kunst" onclick="link('kunst.html')">Kunst</div>
+      <div class="sport" onclick="link('sport.html')">Sport</div>
+      <div class="biologie" onclick="link('biologie.html')">Biologie</div>
+    </div>
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="100%"
+      height="100%"
+      class="filterwrapper"
+    >
+      <defs>
+        <svg
+          id="glitchmask-r"
+          width="100%"
+          height="100%"
+          viewbox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <line class="top-r" x1="0" y1="0" x2="100%" y2="0"></line>
+          <line class="bot-r" x1="0" y1="100%" x2="100%" y2="100%"></line>
+        </svg>
+        <svg
+          id="glitchmask-g"
+          width="100%"
+          height="100%"
+          viewbox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <line class="top-g" x1="0" y1="0" x2="100%" y2="0"></line>
+          <line class="bot-g" x1="0" y1="100%" x2="100%" y2="100%"></line>
+        </svg>
+
+        <filter
+          color-interpolation-filters="sRGB"
+          id="informatik"
+          width="100%"
+          heigth="100%"
+          x="0"
+          y="0"
+        >
+          <feFlood flood-color="rgba(0, 127, 255, 0.01)" result="black" />
+
+          <!-- red text start -->
+          <feFlood flood-color="red" result="REDTXT_FLOOD_10" />
+          <feComposite
+            operator="in"
+            in="REDTXT_FLOOD_10"
+            in2="SourceAlpha"
+            result="REDTXT_COMP_20"
+          />
+          <feOffset
+            in="SourceGraphic"
+            dx="-2"
+            dy="0"
+            result="REDTXT_OFFSET_30"
+          />
+          <feMerge result="REDTXT_MERGE_40">
+            <feMergeNode in="black" />
+            <feMergeNode in="REDTXT_COMP_20" />
+            <feMergeNode in="REDTXT_OFFSET_30" />
+          </feMerge>
+          <feImage
+            preserveAspectRatio="none"
+            id="mask-r"
+            result="REDTXT_IMG_50"
+            xlink:href="#glitchmask-r"
+          />
+          <feComposite
+            in2="REDTXT_IMG_50"
+            in="REDTXT_MERGE_40"
+            operator="out"
+            result="REDTXT_COMP_60"
+          />
+          <!-- red text end -->
+
+          <!-- green text start -->
+          <feFlood flood-color="limegreen" result="GREENTXT_FLOOD_10" />
+          <feComposite
+            operator="in"
+            in="GREENTXT_FLOOD_10"
+            in2="SourceAlpha"
+            result="GREENTXT_COMP_20"
+          />
+          <feOffset
+            in="SourceGraphic"
+            dx="2"
+            dy="0"
+            result="GREENTXT_OFFSET_30"
+          />
+          <feMerge result="GREENTXT_MERGE_40">
+            <feMergeNode in="black" />
+            <feMergeNode in="GREENTXT_COMP_20" />
+            <feMergeNode in="GREENTXT_OFFSET_30" />
+          </feMerge>
+          <feImage
+            preserveAspectRatio="none"
+            id="mask-g"
+            result="GREENTXT_IMG_50"
+            xlink:href="#glitchmask-g"
+          />
+          <feComposite
+            in2="GREENTXT_IMG_50"
+            in="GREENTXT_MERGE_40"
+            operator="out"
+            result="GREENTXT_COMP_60"
+          />
+          <!-- green text end -->
+
+          <feMerge result="MERGE_10">
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="REDTXT_COMP_60" />
+            <feMergeNode in="GREENTXT_COMP_60" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>
